@@ -1,0 +1,39 @@
+{
+  "name": "@my-flora/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/server.ts --format esm --platform node --sourcemap --clean",
+    "dev": "tsx watch src/server.ts",
+    "demo:reset": "prisma db push --force-reset && pnpm seed:test-plants",
+    "seed:test-plants": "tsx scripts/seed-test-plants.ts",
+    "prisma:format": "prisma format",
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "@fastify/cors": "11.3.0",
+    "@my-flora/shared": "workspace:*",
+    "@prisma/adapter-pg": "7.9.1",
+    "@prisma/client": "7.9.1",
+    "dotenv": "17.4.2",
+    "fastify": "5.12.0",
+    "fastify-type-provider-zod": "7.0.0",
+    "pg": "8.23.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.1",
+    "@types/pg": "8.21.0",
+    "prisma": "7.9.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tsup": "8.5.1",
+    "tsx": "4.23.12",
+    "vitest": "4.1.10"
+  }
+}

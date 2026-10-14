@@ -1,0 +1,31 @@
+{
+  "name": "my-flora",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.21.0",
+  "engines": {
+    "node": ">=22.13.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --recursive --if-present build",
+    "dev": "pnpm --parallel --filter @my-flora/api --filter @my-flora/mobile dev",
+    "dev:api": "pnpm --filter @my-flora/api dev",
+    "dev:mobile": "pnpm --filter @my-flora/mobile dev",
+    "demo:reset": "pnpm --filter @my-flora/api demo:reset",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "pnpm --recursive --if-present test",
+    "typecheck": "pnpm --recursive --if-present typecheck",
+    "validate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test"
+  },
+  "devDependencies": {
+    "eslint": "9.39.2",
+    "eslint-config-expo": "57.0.1",
+    "globals": "17.11.0",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.67.0"
+  }
+}

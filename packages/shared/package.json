@@ -1,0 +1,22 @@
+{
+  "name": "@my-flora/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./health": "./src/contracts/health.schema.ts",
+    "./plants": "./src/contracts/plant.schema.ts",
+    "./plant-analysis": "./src/domain/plant-analysis.schema.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "dependencies": {
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "vitest": "4.1.10"
+  }
+}

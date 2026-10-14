@@ -1,0 +1,23 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+  runtime      = "nodejs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Plant {
+  id           String   @id
+  nickname     String   @db.VarChar(60)
+  species      String?  @db.VarChar(100)
+  imageUrl     String?
+  healthStatus String   @db.VarChar(32)
+  nextAction   String?
+  createdAt    DateTime
+  updatedAt    DateTime
+
+  @@map("plants")
+}

@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "My Flora",
+    "slug": "my-flora",
+    "version": "0.1.0",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait",
+    "scheme": "myflora",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.myflora.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true
+      }
+    },
+    "android": {
+      "package": "com.myflora.app"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": ["en", "he"],
+            "android": ["en", "he"]
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "supportsRTL": true,
+      "forcesRTL": false
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

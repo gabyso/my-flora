@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: my-flora-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @my-flora/api prisma:generate && pnpm --filter @my-flora/api build
+    startCommand: pnpm --filter @my-flora/api exec prisma db push && pnpm --filter @my-flora/api start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_CORS_ORIGIN
+        value: "*"
+      - key: DATABASE_URL
+        sync: false
